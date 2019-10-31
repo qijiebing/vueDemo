@@ -1,0 +1,293 @@
+.new-list {
+    padding: 20px 10px 0;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    background: #fff;
+    padding: 16px 30px 16px 30px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+
+    .com-circle() {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: #f2f4f7;
+        border-radius: 50%;
+    }
+
+    &::before {
+        .com-circle;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    &::after {
+        .com-circle;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .tips {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(-83deg, #00d4a5 0%, #5ad479 100%), linear-gradient(#00d565, #00d565);
+        background-blend-mode: normal, normal;
+        height: 32px;
+        padding: 0 16px;
+        line-height: 32px;
+        border-radius: 20px 2px 20px 2px;
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .self {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url('//img1.40017.cn/touch/bus/scenic/sell/nzy.png') 0 0 no-repeat;
+        background-size: 117px 32px;
+        width: 117px;
+        height: 32px;
+    }
+ 
+    .water {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        .text,.time {
+            margin-bottom: 16px;
+            font-size: 34px;
+            line-height: 50px;
+            font-weight: bold;
+            padding-left: 45px;
+        }
+
+        .hour,.trip {
+            font-size: 24px;
+            line-height: 50px;
+            color: #999;
+        }
+        .trip{
+            font-size: 30px;
+            margin-left: 20px;
+            // font-weight: bold;
+        }
+
+    }
+
+    .station {
+        flex: 1;
+        font-size: 32px;
+        line-height: 40px;
+
+        .dep-before() {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            background-color: #999;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #eaebee;
+            // border-radius: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            z-index: 3;
+        }
+
+        .dep-after() {
+            content: '';
+            position: absolute;
+            left: 10px;
+            background-color: #eaebee;
+            width: 2px;
+            z-index: 1;
+        }
+
+        .dep {
+            position: relative;
+            padding: 10px 0 10px 45px;
+            // font-weight: 700;
+            color: #000;
+
+            &::before {
+                .dep-before
+            }
+
+            &::after {
+                .dep-after;
+                top: 50%;
+                bottom: 0;
+            }
+        }
+        .des-txt{
+            padding-left:45px;
+            font-weight: bold;
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                left: 10px;
+                background-color: #eaebee;
+                width: 2px;
+                z-index: 1;
+                top: 0;
+                height: 100%;
+                bottom: 50%;
+            }
+            span{
+                color: #ff6f61;
+                margin-left: 10px;
+                em{
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .des {
+            position: relative;
+            padding: 10px 0 10px 45px;
+
+            &::before {
+                .dep-before
+            }
+
+            &::after {
+                .dep-after;
+                top: 0;
+                bottom: 50%;
+            }
+
+        }
+
+        .sless {
+            height: 100px;
+            overflow: hidden;
+        }
+    }
+
+    .price {
+        padding: 10px 0 0 20px;
+        font-size: 40px;
+        font-weight: 700;
+        color: #ff6540;
+        align-self: flex-start;
+
+        .rmb {
+            margin-right: 4px;
+            font-size: 28px;
+        }
+    }
+    
+
+
+
+    .line {
+        line-height: 50px;
+        height:50px;
+        font-size:24px;
+        color:#999;
+        overflow: hidden;
+        white-space: nowrap;
+        p{
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .trip {
+            // width: 170px;
+        }
+
+        .type {
+            // background: url('//img1.40017.cn/touch/bus/scenic/sell/ntype.png') 0 center / 22px 23px no-repeat;
+            // padding-left: 45px;
+            flex: 1;
+        }
+
+        .sred {
+            color: #ff6540;
+        }
+    }
+
+    .add {
+        padding-top: 22px;
+        line-height: 1.2;
+
+        .trip {
+            width: 170px; 
+        }
+
+        .more {
+            // background: url('//img1.40017.cn/touch/bus/scenic/sell/nmore.png') 0 center / 22px 23px no-repeat;
+            // padding-left: 45px;
+            flex: 1;
+        }
+
+    }
+    
+}
+.noSale{
+    background: #eee;
+    color: #b8b5b5;
+    .station .dep{
+        color: #b8b5b5;
+    }
+    .right-part .ticket-price{
+        color: #b8b5b5;
+    }
+}
+.left-part{
+
+}
+.right-part{
+    width: 165px;
+    
+    .ticket-price{
+        text-align: right;
+        line-height: 72px;
+        height:72px;
+        font-size:38px;
+        color:#ff6f61;
+        margin-top: 60px;
+        .type{
+            font-size:24px;
+        }
+    }
+    .ticket-left{
+        width: 100%;
+        text-align: right;
+        font-size:24px;
+        color: #999;
+        height: 48px;
+        line-height: 48px;
+    }
+    .ticket-vol{
+        margin-top:10px;
+        text-align: center;
+        span{
+            padding:1px 10px;
+            border-radius: 20px;
+            background: #ff6f61;
+            margin-right:4px;
+            color: #fff;
+        }
+        
+    }
+}
+
+.box-tips {
+    padding: 26px 30px 28px;
+}
+
+.box-self {
+    background: #fff url('//img1.40017.cn/touch/bus/scenic/sell/nzyb2.png') right bottom / 231px 97px no-repeat;
+}

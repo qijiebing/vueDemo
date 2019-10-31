@@ -1,0 +1,144 @@
+#search {
+    z-index: 10;
+}
+.search {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 5px;
+    // padding: 16px 16px;
+    // background-color: #f2f4f7;
+    // box-shadow: 2px 2px 6px 4px #eee;
+    .sbox {
+        background-color: #fff;
+        border-radius: 10px;
+        height: 68px;
+        // border-radius: 32px;
+        // padding: 0 20px;
+        transition: all ease-in 0.1s;
+        width: 100%;
+        margin: 16px 10px;
+        position: relative;
+        // &.active {
+        //     width: 60%;
+        // }
+    }
+
+    .magnifier {
+        padding: 0 4px 0 10px;
+        line-height: 68px;
+        font-size: 28px;
+        color: #ccc;
+        &::after {
+            content: '\e924';
+            font-family: 'iconfont' !important;
+        }
+        position: absolute;
+        left: 12px;
+    }
+
+    .enter {
+        height: 68px;
+        line-height: normal;
+        padding-left: 70px;
+        border: none;
+        width: 100%;
+        border-radius: 32px;
+        color: #333;
+        background: #f2f4f7;
+        &::-webkit-input-placeholder {
+            font-size: 26px;
+        }
+        &.entered,
+        &.wait-enter {
+            padding: 0 10px;
+            text-align: center;
+        }
+    }
+
+    .hidtext {
+        width: 2px;
+        border: none;
+        color: #fff;
+        display: none;
+    }
+
+    .delete {
+        padding: 0 20px;
+        line-height: 68px;
+        font-size: 26px;
+        color: #999;
+        position: absolute;
+        right: 0;
+        &::after {
+            content: '\e91c';
+            font-family: 'iconfont' !important;
+        }
+    }
+}
+
+.search-result {
+    position: absolute;
+    top: 96px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #fff;
+    -webkit-overflow-scrolling: touch;
+    z-index: 89;
+
+    .no-res {
+        padding: 40px 0;
+        text-align: center;
+        font-weight: 400;
+        font-size: 36px;
+        color: #999;
+    }
+
+    .rcname {
+        padding: 26px 40px;
+        font-size: 32px;
+        color: #333;
+        vertical-align: middle;
+        line-height: 32px;
+        &::before {
+            display: inline-block;
+            width: 60px;
+            margin-right: 14px;
+            line-height: 32px;
+            height: 32px;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 6px;
+            vertical-align: middle;
+            margin-top: -4px;
+        }
+    }
+    .son-city {
+        padding-left: 116px;
+    }
+    .cityname-item::before {
+        content: '城市';
+        background-color: #eee;
+        color: #999;
+    }
+    .airportname-item::before {
+        content: '机场';
+        background-color: RGBA(109, 205, 255, 1);
+        color: #fff;
+    }
+    .scenicname-item::before {
+        content: '景点';
+        background-color: #ff9859;
+        color: #fff;
+    }
+    .sitename-item::before {
+        content: '站点';
+        background-color: RGBA(105, 224, 161, 1);
+        color: #ffffff;
+    }
+}

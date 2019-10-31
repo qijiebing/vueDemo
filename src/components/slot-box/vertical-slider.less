@@ -1,0 +1,44 @@
+.vertical-slider {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+    transition: all ease-in 0.2s;
+    transform: translate3D(0, 100%, 0);
+    z-index: 1011;
+    // max-height: 940px;
+    min-height: 220px;
+    .solt-box {
+        // height: 940px;
+        padding-bottom: 2px;
+        overflow: auto;
+        // min-height: 940px;
+        -webkit-overflow-scrolling: touch;
+        & > * {
+            height: 100%;
+        }
+    }
+    &.show {
+        transform: translate3D(0, 0, 0);
+    }
+    .title {
+        background: #fff;
+        line-height: 100px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        position: relative;
+        width: 100%;
+        padding: 0 40px;
+    }
+    .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 100px;
+        height: 100px;
+        width: 100px;
+    }
+}

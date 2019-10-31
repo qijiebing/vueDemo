@@ -1,0 +1,155 @@
+#cityScroll {
+    padding: 110px 0 2px;
+    overflow: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+.hot-part {
+    padding-right: 44px;
+}
+.part-tit {
+    color: #666;
+    padding: 10px 20px 30px 20px;
+    line-height: 1;
+}
+.gps span {
+    color: #999;
+}
+.item-box {
+    // margin-bottom: 20px;
+    // background: #fff;
+    padding: 0 20px;
+    .city-item {
+        flex: 0 0 44%;
+        border: 1px solid #e4e4e4;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        padding: 12px 8px;
+        background: #fff;
+        width: 44%;
+        font-size: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            font-size: 28px
+        }
+        // max-height: 100px;
+        // overflow: hidden;
+        &.selected {
+            border-color: #0dd56b;
+            background: #dcffed;
+            & > p {
+                color: #0dd56b !important;
+                & > span {
+                    color: #0dd56b !important;
+                }
+            }
+        }
+        &:nth-child(2n-1) {
+            margin-left: 4%;
+            margin-right: 4%;
+        }
+        p {
+            margin: auto;
+            color: #999;
+
+            &:only-child,
+            &:nth-child(1) {
+                color: #333;
+            }
+        }
+    }
+}
+.word-list {
+    background: #fff;
+    // padding: 0 20px;
+    z-index: 0;
+    position: relative;
+    transform: translateZ(0);
+
+    h4 {
+        height: 58px;
+        line-height: 58px;
+        // border-radius: 20px;
+        padding: 0 20px;
+    }
+    ul {
+        padding: 0 20px;
+    }
+    li {
+        font-size: 28px;
+        line-height: 32px;
+        padding: 30px 0;
+        span {
+            font-size: 20px;
+            color: #666;
+        }
+        &::before {
+            // content:''
+            display: inline-block;
+            width: 60px;
+            margin-right: 14px;
+            line-height: 1;
+            // height: 32px;
+            text-align: center;
+            font-size: 24px;
+            padding: 4px 0;
+            border-radius: 6px;
+            vertical-align: top;
+            // margin-
+        }
+        &:last-child {
+            margin-bottom: 10px;
+            &::after {
+                display: none;
+            }
+        }
+        &.child-city {
+            padding-left: 70px;
+            padding-top: 6px;
+        }
+    }
+
+    .cityname-item::before {
+        content: '城市';
+        background-color: #eee;
+        color: #999;
+    }
+    .airportname-item::before {
+        content: '机场';
+        background-color: RGBA(109, 205, 255, 1);
+        color: #fff;
+    }
+    .scenicname-item::before {
+        content: '景点';
+        background-color: #ff9859;
+        color: #fff;
+    }
+    .sitename-item::before {
+        content: '站点';
+        background-color: RGBA(105, 224, 161, 1);
+        color: #ffffff;
+    }
+}
+.letter-list {
+    position: fixed;
+    right: 6px;
+    top: 90px;
+    // transform: translateY(-50%);
+    // background: #fff;
+    z-index: 9;
+    line-height: 1.8;
+    padding: 20px 6px;
+    border-radius: 20px;
+    // background: rgba(242, 244, 247, 0.3);
+    color: #0dd56b;
+}
+.nodata {
+    background: url(//img1.40017.cn/touch/bus/wx_bus/scnone.png) center 340px no-repeat;
+    background-size: 110px 116px;
+    padding-top: 500px;
+    text-align: center;
+    font-size: 28px;
+    color: #ccc;
+}

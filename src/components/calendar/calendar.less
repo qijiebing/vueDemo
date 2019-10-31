@@ -1,0 +1,144 @@
+.calendar {
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .wrapper {
+        padding: 20px 20px 0;
+    }
+
+    .title {
+        line-height: 80px;
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .week {
+        line-height: 80px;
+        text-align: center;
+        font-size: 36px;
+
+        &:first-child {
+            color: #fb5454;
+        }
+        &:last-child {
+            color: #fb5454;
+        }
+    }
+
+    .month {
+        padding: 10px 0;
+        font-size: 0;
+
+        .grid {
+            display: inline-block;
+            width: 14.28%;
+            box-sizing: border-box;
+            padding: 0 8px 8px;
+            overflow: hidden;
+            vertical-align: top;
+        }
+
+        .day {
+            position: relative;
+            height: 84px;
+            // padding-top: 16px;
+            text-align: center;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .num {
+            margin-bottom: 4px;
+        }
+
+        .jia {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            font-size: 16px;
+            color: #fb5454;
+        }
+
+        .recent {
+            font-size: 20px;
+            color: #0dd66c;
+        }
+
+        .today {
+            background-color: #e7e7e7;
+            border-radius: 8px;
+        }
+
+        .weekend {
+            .num {
+                color: #fb5454;
+            }
+            .recent {
+                color: #fb5454;
+            }
+        }
+
+        .festival {
+            .num {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+        }
+
+        .holiday {
+            .num {
+                color: #fb5454;
+            }
+            .recent {
+                color: #fb5454;
+            }
+        }
+
+        .selected {
+            background-color: #0dd66c;
+            color: #fff;
+            border-radius: 8px;
+
+            .recent {
+                color: #fff;
+            }
+
+            .num {
+                color: #fff;
+            }
+
+            .jia {
+                color: #fff;
+            }
+            &.disabled {
+                color: #999;
+                background: #ccc;
+                .num {
+                    color: #999;
+                }
+            }
+        }
+
+        .disabled {
+            color: #ccc;
+
+            .recent {
+                color: #ccc;
+            }
+
+            .num {
+                color: #ccc;
+            }
+
+            .jia {
+                color: #ccc;
+            }
+        }
+    }
+}
